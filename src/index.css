@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  ul>li::marker {
+    content: "- ";
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: rgb(206, 208, 207);
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: hsla(0, 0%, 37%, 0.5);
+    border-radius: 100vh;
+    border: 3px solid rgb(170, 170, 170);
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #404340;
+  }
+}
+
+.blinking-cursor::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+.list-item::marker {}
+
+@keyframes blink {
+
+  from,
+  to {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
